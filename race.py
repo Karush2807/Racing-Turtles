@@ -22,7 +22,19 @@ def num_of_rabits():
             print("invalid input! enter again")
     
         else:
-            return f' the total number of rabits in the race are: {racers}'
+            return racers
+
+def race(colors):
+    turtles=create_turtles(colors)
+
+    while True:
+        for racer in turtles:
+            distance=random.randrange(1,20)
+            racer.forward(distance)
+
+            x,y=racer.pos()
+            if y>=HEIGHT//2 - 20:
+                return colors[turtles.index(racer)]
 
 def create_turtles(colors):
 	turtles = []
@@ -49,9 +61,9 @@ init_rabits()
 
 
 random.shuffle(COLORS)
-colors=COLORS[:racers]
+colors=COLORS[ :racers]
 print(colors)
 
-
-
-turtle.done()#will keep the screen open4
+create_turtles(colors)
+# time.sleep(5)#will keep the screen open for 5 seconds
+turtle.done()#will keep the screen open4a

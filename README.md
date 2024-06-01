@@ -38,7 +38,9 @@ def num_of_rabits():
         else:
             return racers
 ```
-create_turtles(colors)
+#### `create_turtles(colors)`
+
+
 Creates turtle objects for each racer, assigns them a color, and positions them at the starting line.
 
 ```python
@@ -57,7 +59,8 @@ def create_turtles(colors):
     return turtles
 ```
 
-init_rabits()
+#### `init_rabits()`
+
 Initializes the turtle graphics screen with the specified width, height, and title.
 
 ```python
@@ -67,8 +70,8 @@ def init_rabits():
     screen.title("Racing Rabits")
 ```
 
-race(colors)
-Simulates the race by moving each turtle forward by a random distance in each iteration. The race continues until one of the turtles crosses the finish line.
+#### `race(colors)`
+Simulates' the race by moving each turtle forward by a random distance in each iteration. The race continues until one of the turtles crosses the finish line.
 
 ```python
 def race(colors):

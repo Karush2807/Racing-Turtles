@@ -1,6 +1,9 @@
 import turtle #for 2d graphics
 import time #for time delay
+import random #for random number generation
 WIDTH, HEIGHT = 500, 500
+COLORS = ['red', 'green', 'blue', 'orange', 'yellow', 'black', 'purple', 'pink', 'brown', 'cyan']
+
 
 
 
@@ -21,6 +24,21 @@ def num_of_rabits():
         else:
             return f' the total number of rabits in the race are: {racers}'
 
+def create_turtles(colors):
+	turtles = []
+	spacingx = WIDTH // (len(colors) + 1)
+	for i, color in enumerate(colors):
+		racer = turtle.Turtle()
+		racer.color(color)
+		racer.shape('turtle')
+		racer.left(90)
+		racer.penup()
+		racer.setpos(-WIDTH//2 + (i + 1) * spacingx, -HEIGHT//2 + 20)
+		racer.pendown()
+		turtles.append(racer)
+
+	return turtles
+
 def init_rabits():
     screen= turtle.Screen()#will initialise a screen for us
     screen.setup(WIDTH, HEIGHT)#size of the screen
@@ -29,9 +47,11 @@ def init_rabits():
 racers=num_of_rabits()
 init_rabits()
 
-racer=turtle.Turtle()#will create a turtle object
-racer.forward(100)#will move the turtle forward by 100 units    \
-racer.left(90)
-racer.forward(90)
-racer.right(100)
-time.sleep(10)
+
+random.shuffle(COLORS)
+colors=COLORS[:racers]
+print(colors)
+
+
+
+turtle.done()#will keep the screen open4

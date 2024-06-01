@@ -64,6 +64,7 @@ random.shuffle(COLORS)
 colors=COLORS[ :racers]
 print(colors)
 
-create_turtles(colors)
+winner=race(colors)
 # time.sleep(5)#will keep the screen open for 5 seconds
 turtle.done()#will keep the screen open4a
+print(winner)
